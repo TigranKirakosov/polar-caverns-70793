@@ -1,1 +1,1 @@
-web: npm i nodemon && npm run server
+web: npm i && npm run server
