@@ -1,0 +1,6 @@
+{
+  "mongoURI": "mongodb+srv://tigran123:tigran123@cluster0-unbqq.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "mysecrettoken",
+  "githubClientId": "00fb18b73aa43b2e25a1",
+  "githubSecret": "b0c0b1db47755e02f305064ceefaa4d1c10799c4"
+}
