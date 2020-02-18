@@ -16,9 +16,6 @@ router.post(
       .isEmpty(),
     check('description', 'Please include a description')
       .not()
-      .isEmpty(),
-    check('birthDate', 'Please include a birth date')
-      .not()
       .isEmpty()
   ],
   async (req, res) => {
@@ -27,7 +24,18 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { name, description, birthDate } = req.body;
+    const {
+      animalKind,
+      name,
+      character,
+      description,
+      sponsor,
+      curator,
+      reviews,
+      photoGallery,
+      birthDate,
+      shelterDate
+    } = req.body;
 
     try {
       let pet = await Pet.findOne({ name });
@@ -39,9 +47,16 @@ router.post(
       }
 
       pet = new Pet({
+        animalKind,
         name,
+        character,
         description,
-        birthDate
+        sponsor,
+        curator,
+        reviews,
+        photoGallery,
+        birthDate,
+        shelterDate
       });
 
       await pet.save();
@@ -78,10 +93,16 @@ router.get('/:pet_id', async (req, res) => {
 router.get('/', async (req, res) => {
   try {
     const pets = await Pet.find().populate('pet', [
+      'animalKind',
       'name',
+      'character',
       'description',
+      'sponsor',
+      'curator',
+      'reviews',
+      'photoGallery',
       'birthDate',
-      'date'
+      'shelterDate'
     ]);
     res.json(pets);
   } catch (error) {
