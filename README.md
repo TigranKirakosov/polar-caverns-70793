@@ -6,7 +6,7 @@ To work with Heroku it is required to install heroku-cli: `npm i heroku -g`
 
 Steps to set up things running:
 
-1. cd polar-caverns-70793
+1. `cd polar-caverns-70793`
 2. `npm install`
 3. local usage: `npm run server` (PORT = 5000)
 4. heroku server: `npm run heroku-server`
