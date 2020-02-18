@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "heroku-server": "heroku open -a polar-caverns-70793",
     "start": "node server",
     "server": "nodemon server"
   },
